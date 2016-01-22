@@ -10,7 +10,7 @@ function addFrame(n) {
 }
 
 function regen() {
-  r = {"title": $('#atitleInput')[0].value, "album": []};
+  r = {"title": $('#atitleInput')[0].value, "description": $('#adescInput')[0].value,"album": []};
   $($('.frame')).each(function (i, el) {
     if ($(`#frame${i} #linkInput`)[0].value) {
       r.album.push({
@@ -30,6 +30,6 @@ $(document).ready(function () {
   });
   $('#generate').on('click', function () {
     console.debug(btoa(regen()));
-    $('.link').html(`<a href="view.html#${btoa(regen())}">Share this link</a>`);
+    $('.link').html(`<a href="view.html#${btoa(regen())}">${window.location.href}view.html#${btoa(regen())}</a>`);
   });
 });

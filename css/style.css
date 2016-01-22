@@ -44,6 +44,7 @@ img {
 /* Text {{{ */
 
 h1 {
+    color: #444444;
     display: block;
     font-size: 3em;
     margin: 0 auto;
@@ -78,6 +79,10 @@ p {
     width: 80%;
 }
 
+p#descText {
+  font-style: oblique;
+}
+
 a,
 a:visited {
     color: #466688;
@@ -103,10 +108,13 @@ hr {
 
 /* Input {{{ */
 
-input {
+input,
+textarea {
     background: #F7F7F7;
     border: none;
     display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: .9em;
     height: 25px;
     margin: 10px auto;
     padding: 5px 0 5px 10px;
@@ -116,6 +124,11 @@ input {
 
 input:focus {
     background: #E2E2E2;
+}
+
+textarea {
+    height: 125px;
+    padding: 10px 0 10px 10px;
 }
 
 #atitleInput {
@@ -139,8 +152,13 @@ input:focus {
 }
 
 .link {
+    display: block;
     font-size: 1.2em;
-    margin: 20px 0;
+    margin: 20px auto;
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 80%;
+    word-wrap: break-word;
 }
 
 /* }}} */
