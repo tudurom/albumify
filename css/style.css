@@ -79,8 +79,8 @@ p {
     width: 80%;
 }
 
-p#descText {
-  font-style: oblique;
+#descText {
+    margin-top: 10px;
 }
 
 a,
@@ -94,6 +94,12 @@ a:visited {
 
 a:hover {
     color: #869ABF;
+}
+
+#home {
+    left: 20px;
+    position: absolute;
+    top: 20px;
 }
 
 hr {
