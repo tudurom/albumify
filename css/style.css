@@ -182,6 +182,11 @@ input[type="submit"], button {
     height: 50px;
 }
 
+#deleteFrame {
+  background: #FF9999;
+  color: #804D4D;
+}
+
 #generate {
     background: #D6EBCD;
     color: #468847;

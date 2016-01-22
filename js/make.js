@@ -1,21 +1,50 @@
+frames = 0;
+
 function addFrame(n) {
+  frames++;
   r = `<div class="frame" id="frame${n}">`;
   r +=  `<h3 class="number">Image ${n + 1}</h3>`;
   r +=  '<p class="label">Image Title</p>';
   r +=  '<input type="text" id="titleInput" placeholder="A day at the beach" />';
   r +=  '<p class="label">Image Link</p>';
   r +=  '<input type="text" id="linkInput" placeholder="https://..." />';
+  r +=  '<button id="deleteFrame">Delete image</button>';
   r += '</div>';
   $('.container').append(r);
+  updateNumbers();
+  $(`#frame${n}`).on('click', function () {
+    $(this).remove();
+    updateNumbers();
+  });
+}
+
+function updateNumbers() {
+  $('.number').each(function (i, el) {
+    if (i > 0) { // Skip over the "Album" text
+      el.innerHTML = `Image ${i}`;
+    }
+  });
 }
 
 function regen() {
   r = {"title": $('#atitleInput')[0].value, "description": $('#adescInput')[0].value,"album": []};
   $($('.frame')).each(function (i, el) {
-    if ($(`#frame${i} #linkInput`)[0].value) {
+    var linkField, titleField;
+    var deleteBtn;
+    var counter = 0;
+    // This should be made as a function
+    while (counter < el.childNodes.length && el.childNodes[counter].id != "linkInput")
+      counter++; // It's guaranteed we find one
+    linkField = el.childNodes[counter];
+    counter = 0;
+    while (counter < el.childNodes.length && el.childNodes[counter].id != "titleInput")
+      counter++; // It's guaranteed we find one
+    titleField = el.childNodes[counter];
+
+    if (linkInput.value) {
       r.album.push({
-        "picSrc": $(`#frame${i} #linkInput`)[0].value,
-        "title": $(`#frame${i} #titleInput`)[0].value
+        "picSrc": linkInput.value,
+        "title": titleInput.value
       });
     }
   });
@@ -24,9 +53,9 @@ function regen() {
 }
 
 $(document).ready(function () {
-  addFrame(0);
+  addFrame(frames);
   $('#addFrame').on('click', function () {
-    addFrame($('.frame').length);
+    addFrame(frames);
   });
   $('form').on('submit', function (e) {
     e.preventDefault();
