@@ -102,6 +102,12 @@ a:hover {
     top: 20px;
 }
 
+#remix {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
 hr {
     border: 0;
     border-top: 3px solid #70838c;

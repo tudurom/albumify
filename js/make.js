@@ -1,13 +1,15 @@
 frames = 0;
 
-function addFrame(n) {
+function addFrame(n, defaultLink, defaultTitle) {
+  defaultLink = defaultLink || "";
+  defaultTitle = defaultTitle || "";
   frames++;
   r = `<div class="frame" id="frame${n}">`;
   r +=  `<h3 class="number">Image ${n + 1}</h3>`;
   r +=  '<p class="label">Image Title</p>';
-  r +=  '<input type="text" id="titleInput" placeholder="A day at the beach" />';
+  r +=  `<input type="text" id="titleInput" placeholder="A day at the beach" value="${defaultTitle}"/>`;
   r +=  '<p class="label">Image Link</p>';
-  r +=  '<input type="text" id="linkInput" placeholder="https://..." />';
+  r +=  `<input type="text" id="linkInput" placeholder="https://..." value="${defaultLink}" />`;
   r +=  '<button id="deleteFrame">Delete image</button>';
   r += '</div>';
   $('.container').append(r);
@@ -52,6 +54,19 @@ function regen() {
   return JSON.stringify(r);
 }
 
+function updateFromHash() {
+  $('.frame').remove();
+  var parsed = JSON.parse(atob(location.hash.slice(1)));
+  var title = parsed.title;
+  var desc = parsed.description;
+  var album = parsed.album;
+  $('#atitleInput')[0].value = title;
+  $('#adescInput')[0].value = desc || "";
+  album.forEach(function (frame) {
+    addFrame(frames, frame.picSrc, frame.title);
+  });
+}
+
 $(document).ready(function () {
   addFrame(frames);
   $('#addFrame').on('click', function () {
@@ -62,4 +77,8 @@ $(document).ready(function () {
     console.debug(btoa(regen()));
     $('.link').html(`<a href="view.html#${btoa(regen())}">${window.location.href}view.html#${btoa(regen())}</a>`);
   });
+  $(window).on('hashchange', updateFromHash);
+  if (location.hash.slice(1) !== "") {
+    updateFromHash();
+  }
 });

@@ -21,6 +21,7 @@ album = [];
 
 $(document).ready(function () {
   reload();
+  $('#remix')[0].href += location.hash;
   $(window).on('hashchange', function () {
     reload();
   });
