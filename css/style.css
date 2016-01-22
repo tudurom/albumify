@@ -79,6 +79,10 @@ p {
     width: 80%;
 }
 
+p#descText {
+  font-style: oblique;
+}
+
 a,
 a:visited {
     color: #466688;

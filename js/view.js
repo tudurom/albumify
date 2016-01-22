@@ -4,6 +4,7 @@ function reload() {
   parsed = JSON.parse(atob(getArg()));
   $('title').text(parsed.title);
   $('#titleText').text(parsed.title);
+  $('#descText').text(parsed.description);
   album = parsed.album;
   console.log(atob(getArg()));
   var r = "";

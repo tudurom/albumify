@@ -10,7 +10,7 @@ function addFrame(n) {
 }
 
 function regen() {
-  r = {"title": $('#atitleInput')[0].value, "album": []};
+  r = {"title": $('#atitleInput')[0].value, "description": $('#adescInput')[0].value,"album": []};
   $($('.frame')).each(function (i, el) {
     if ($(`#frame${i} #linkInput`)[0].value) {
       r.album.push({
