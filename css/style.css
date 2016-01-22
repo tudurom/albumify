@@ -1,0 +1,173 @@
+/* Album-ify! css */
+
+/* Main {{{ */
+
+html,
+body,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    height: 100%;
+    margin: 50px 0 50px;
+    width: 100%;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+.wrap {
+    display: block;
+    margin: 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    max-width: 70%;
+}
+
+/* }}} */
+
+/* Text {{{ */
+
+h1 {
+    display: block;
+    font-size: 3em;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h2 {
+    color: #505050;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h3 {
+    color: #505050;
+    display: block;
+    font-size: 1.5em;
+    margin: 10px auto 10px;
+    width: 80%;
+}
+
+.title {
+    width: 70%;
+}
+
+p {
+    color: #707070;
+    display: block;
+    font-size: 1.1em;
+    line-height: 1.5;
+    margin: 0 auto;
+    width: 80%;
+}
+
+a,
+a:visited {
+    color: #466688;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .2s;
+}
+
+a:hover {
+    color: #869ABF;
+}
+
+hr {
+    border: 0;
+    border-top: 3px solid #70838c;
+    margin: 25px auto;
+    opacity: .3;
+    width: 600px;
+}
+
+/* }}} */
+
+/* Input {{{ */
+
+input {
+    background: #F7F7F7;
+    border: none;
+    display: block;
+    height: 25px;
+    margin: 10px auto;
+    padding: 5px 0 5px 10px;
+    transition: .2s;
+    width: 300px;
+}
+
+input:focus {
+    background: #E2E2E2;
+}
+
+#atitleInput {
+    display: block;
+}
+
+.label {
+    color: #A1A1A1;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    width: 300px;
+}
+
+.number {
+    color: #707070;
+    font-size: 1.5em;
+    margin: 20px 0 20px 7px;
+    text-align: left;
+}
+
+.link {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+/* }}} */
+
+/* Buttons {{{ */
+
+button {
+    border: none;
+    display: inline-block;
+    font-size: 1em;
+    margin: 15px 2px 15px;
+    transition: .2s;
+    width: 150px;
+    height: 50px;
+}
+
+#generate {
+    background: #D6EBCD;
+    color: #468847;
+}
+
+#generate:hover {
+    background: #BCE4AA;
+}
+
+#addFrame {
+    background: #BCD0EB;
+    color: #466688;
+}
+
+#addFrame:hover {
+    background: #A0B7E4;
+}
+
+/* }}} */

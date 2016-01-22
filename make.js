@@ -1,8 +1,10 @@
 function addFrame(n) {
   r = `<div class="frame" id="frame${n}">`;
-  r +=  `<p>${n + 1}.</p>`;
-  r +=  '<input type="text" id="linkInput" placeholder="Link: http://..." />';
-  r +=  '<input type="text" id="titleInput" placeholder="Title: a day at the beach" />';
+  r +=  `<h3 class="number">Image ${n + 1}</h3>`;
+  r +=  '<p class="label">Image Title</p>';
+  r +=  '<input type="text" id="titleInput" placeholder="A day at the beach" />';
+  r +=  '<p class="label">Image Link</p>';
+  r +=  '<input type="text" id="linkInput" placeholder="https://..." />';
   r += '</div>';
   $('.container').append(r);
 }
