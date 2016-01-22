@@ -28,7 +28,8 @@ $(document).ready(function () {
   $('#addFrame').on('click', function () {
     addFrame($('.frame').length);
   });
-  $('#generate').on('click', function () {
+  $('form').on('submit', function (e) {
+    e.preventDefault();
     console.debug(btoa(regen()));
     $('.link').html(`<a href="view.html#${btoa(regen())}">${window.location.href}view.html#${btoa(regen())}</a>`);
   });

@@ -165,10 +165,11 @@ textarea {
 
 /* Buttons {{{ */
 
-button {
+input[type="submit"], button {
     border: none;
     display: inline-block;
     font-size: 1em;
+    font-family: "Roboto Condensed", sans-serif;
     margin: 15px 2px 15px;
     transition: .2s;
     width: 150px;
