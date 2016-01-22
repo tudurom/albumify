@@ -14,8 +14,8 @@ function addFrame(n, defaultLink, defaultTitle) {
   r += '</div>';
   $('.container').append(r);
   updateNumbers();
-  $(`#frame${n}`).on('click', function () {
-    $(this).remove();
+  $(`#frame${n} #deleteFrame`).on('click', function () {
+    $(this.parentNode).remove();
     updateNumbers();
   });
 }
@@ -30,7 +30,7 @@ function updateNumbers() {
 
 function regen() {
   r = {"title": $('#atitleInput')[0].value, "description": $('#adescInput')[0].value,"album": []};
-  $($('.frame')).each(function (i, el) {
+  $('.frame').each(function (i, el) {
     var linkField, titleField;
     var deleteBtn;
     var counter = 0;
@@ -45,8 +45,8 @@ function regen() {
 
     if (linkInput.value) {
       r.album.push({
-        "picSrc": linkInput.value,
-        "title": titleInput.value
+        "picSrc": linkField.value,
+        "title": titleField.value
       });
     }
   });

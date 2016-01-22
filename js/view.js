@@ -4,11 +4,11 @@ function reload() {
   parsed = JSON.parse(atob(getArg()));
   $('title').text(parsed.title);
   $('#titleText').text(parsed.title);
-  $('#descText').text(parsed.description);
+  $('#descText').html(marked(parsed.description));
   album = parsed.album;
   console.log(atob(getArg()));
   var r = "";
-  $(album).each(function (i, el) {
+  album.forEach(function (el, i) {
     r += '<div class="pic">';
       r += `<h3 class="title">${el.title}</h3>`;
       r += `<img src="${el.picSrc}"`;
