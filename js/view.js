@@ -3,6 +3,7 @@ function getArg() { return location.hash.slice(1); }
 function reload() {
   parsed = JSON.parse(atob(getArg()));
   $('title').text(parsed.title);
+  $('#titleText').text(parsed.title);
   album = parsed.album;
   console.log(atob(getArg()));
   var r = "";
