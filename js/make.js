@@ -30,6 +30,6 @@ $(document).ready(function () {
   });
   $('#generate').on('click', function () {
     console.debug(btoa(regen()));
-    $('.link').html(`<a href="view.html#${btoa(regen())}">Share this link</a>`);
+    $('.link').html(`<a href="view.html#${btoa(regen())}">${window.location.href}view.html#${btoa(regen())}</a>`);
   });
 });

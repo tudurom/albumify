@@ -3,10 +3,13 @@
 /* Main {{{ */
 
 html,
-body,
-ul {
+body {
     margin: 0;
     padding: 0;
+}
+
+html {
+    overflow-x: hidden;
 }
 
 body {
@@ -20,6 +23,7 @@ main {
     display: block;
     margin: 0 auto;
     max-width: 700px;
+    padding: 0 10px;
 }
 
 .wrap {
@@ -40,6 +44,7 @@ img {
 /* Text {{{ */
 
 h1 {
+    color: #444444;
     display: block;
     font-size: 3em;
     margin: 0 auto;
@@ -92,17 +97,20 @@ hr {
     border-top: 3px solid #70838c;
     margin: 25px auto;
     opacity: .3;
-    width: 600px;
+    width: 90%;
 }
 
 /* }}} */
 
 /* Input {{{ */
 
-input {
+input,
+textarea {
     background: #F7F7F7;
     border: none;
     display: block;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: .9em;
     height: 25px;
     margin: 10px auto;
     padding: 5px 0 5px 10px;
@@ -112,6 +120,11 @@ input {
 
 input:focus {
     background: #E2E2E2;
+}
+
+textarea {
+    height: 125px;
+    padding: 10px 0 10px 10px;
 }
 
 #atitleInput {
@@ -128,14 +141,20 @@ input:focus {
 
 .number {
     color: #707070;
-    font-size: 1.5em;
-    margin: 20px 0 20px 7px;
+    display: block;
+    margin: 20px auto;
     text-align: left;
+    width: 90%;
 }
 
 .link {
+    display: block;
     font-size: 1.2em;
-    margin: 20px 0;
+    margin: 20px auto;
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 80%;
+    word-wrap: break-word;
 }
 
 /* }}} */

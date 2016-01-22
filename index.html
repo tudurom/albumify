@@ -1,40 +1,36 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="utf-8">
-        <title>Album-ify!</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
-        <main>
-            <h1>Album-ify!</h1>
-            <h2>Create an album of images!</h2>
+<head>
+    <meta charset="utf-8">
+    <title>Album-ify!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <h1>Album-ify!</h1>
+        <h2>Create an album of images!</h2>
 
-            <hr />
+        <hr />
 
-            <div class="wrap">
-                <h3 class="number">Album</h3>
-                <p class="label">Album Title</p>
-                <input type="text" id="atitleInput"/>
+        <div class="wrap">
+            <h3 class="number">Album</h3>
+            <p class="label">Album Title</p>
+            <input type="text" id="atitleInput"/>
 
-                <div class="container"></div>
+            <!-- <p class="label">Album Description</p> -->
+            <!-- <textarea rows="5" cols="25" id="adescInput"></textarea> -->
 
-                <button id="generate">Generate!</button>
-                <button id="addFrame">Add Image</button>
-                <div class="link"></div>
-            </div>
+            <div class="container"></div>
 
-            <hr />
+            <button id="generate">Generate!</button>
+            <button id="addFrame">Add Image</button>
+            <div class="link"></div>
+        </div>
 
-            <h3>Technical details: How does it work?</h3>
-            <p>
-                This webpage is made in a way you don't need any server side code to run it.
-                When you generate your album you're given a link to the view page with
-                the window hash set to a base64 encoded JSON representation of your album. Pretty cool.
-            </p>
-        </main>
+        <a href="https://github.com/tudurom/albumify"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+    </main>
 
-        <script src="js/zepto.min.js"></script>
-        <script src="js/make.js"></script>
-    </body>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/make.js"></script>
+</body>
 </html>
