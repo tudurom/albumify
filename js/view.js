@@ -2,8 +2,13 @@ function getArg() { return location.hash.slice(1); }
 
 function reload() {
   parsed = JSON.parse(atob(getArg()));
-  $('title').text(parsed.title);
-  $('#titleText').text(parsed.title);
+  if (parsed.title) {
+    $('title').text(parsed.title + ' | Album-ify!');
+    $('#titleText').text(parsed.title);
+  } else {
+    $('title').text('Album-ify!');
+    $('#titleHr').hide();
+  }
   $('#descText').html(marked(parsed.description));
   album = parsed.album;
   console.log(atob(getArg()));
