@@ -1,8 +1,8 @@
 Album-ify!
 ==========
 
-Simple tool for creating imgur-like albums out of image links! Runs entirely<br \>
-on the browser, storing the album in the hash.
+Create imgur-like albums out of image links! Runs entirely<br \>
+in the browser, storing the album in the hash.
 
 ## Live here:
 
