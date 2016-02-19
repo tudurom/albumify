@@ -4,17 +4,17 @@ function addFrame(n, defaultLink, defaultTitle) {
   defaultLink = defaultLink || "";
   defaultTitle = defaultTitle || "";
   frames++;
-  r = `<div class="frame" id="frame${n}">`;
-  r +=  `<h3 class="number">Image ${n + 1}</h3>`;
+  r = '<div class="frame" id="frame' + n + '">';
+  r +=  '<h3 class="number">Image ' + (n + 1) + '</h3>';
   r +=  '<p class="label">Image Title</p>';
-  r +=  `<input type="text" id="titleInput" placeholder="A day at the beach" value="${defaultTitle}"/>`;
+  r +=  '<input type="text" id="titleInput" placeholder="A day at the beach" value="' + defaultTitle + '"/>';
   r +=  '<p class="label">Image Link</p>';
-  r +=  `<input type="text" id="linkInput" placeholder="https://..." value="${defaultLink}" />`;
+  r +=  '<input type="text" id="linkInput" placeholder="https://..." value="' + defaultLink + '" />';
   r +=  '<button id="deleteFrame">Delete image</button>';
   r += '</div>';
   $('.container').append(r);
   updateNumbers();
-  $(`#frame${n} #deleteFrame`).on('click', function () {
+  $('#frame' + n + '#deleteFrame').on('click', function () {
     $(this.parentNode).remove();
     updateNumbers();
   });
@@ -23,7 +23,7 @@ function addFrame(n, defaultLink, defaultTitle) {
 function updateNumbers() {
   $('.number').each(function (i, el) {
     if (i > 0) { // Skip over the "Album" text
-      el.innerHTML = `Image ${i}`;
+      el.innerHTML = 'Image ' + i;
     }
   });
 }
@@ -75,7 +75,7 @@ $(document).ready(function () {
   $('form').on('submit', function (e) {
     e.preventDefault();
     console.debug(btoa(regen()));
-    $('.link').html(`<a href="view.html#${btoa(regen())}">${window.location.href}view.html#${btoa(regen())}</a>`);
+    $('.link').html('<a href="view.html#' + btoa(regen()) + '">' + window.location.href + 'view.html#' + btoa(regen()) + '</a>');
   });
   $(window).on('hashchange', updateFromHash);
   if (location.hash.slice(1) !== "") {

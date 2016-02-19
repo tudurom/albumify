@@ -15,8 +15,8 @@ function reload() {
   var r = "";
   album.forEach(function (el, i) {
     r += '<div class="pic">';
-      r += `<h3 class="title">${el.title}</h3>`;
-      r += `<a href="${el.picSrc}"><img src="${el.picSrc}" /></a>`;
+      r += '<h3 class="title">' + el.title + '</h3>';
+      r += '<a href="' + el.picSrc + '"><img src="' + el.picSrc + '" /></a>';
     r += '</div>';
   });
   $('.container').html(r);
