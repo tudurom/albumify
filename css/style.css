@@ -51,6 +51,17 @@ h1 {
     text-align: center;
 }
 
+/* Fix big headers on mobile */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1em;
+  }
+}
+
 h2 {
     color: #505050;
     display: block;
