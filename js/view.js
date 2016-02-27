@@ -16,7 +16,13 @@ function reload() {
   album.forEach(function (el, i) {
     r += '<div class="pic">';
       r += '<h3 class="title">' + el.title + '</h3>';
-      r += '<a href="' + el.picSrc + '"><img src="' + el.picSrc + '" /></a>';
+      if (el.picSrc.endsWith(".webm")) {
+        r += '<video controls>'
+          r += '<source src="' + el.picSrc + '" type="video/webm">'
+        r += '</video>'
+      } else {
+        r += '<a href="' + el.picSrc + '"><img src="' + el.picSrc + '" /></a>';
+      }
     r += '</div>';
   });
   $('.container').html(r);
