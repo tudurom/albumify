@@ -14,7 +14,7 @@ function addFrame(n, defaultLink, defaultTitle) {
   r += '</div>';
   $('.container').append(r);
   updateNumbers();
-  $('#frame' + n + '#deleteFrame').on('click', function () {
+  $('#frame' + n + ' #deleteFrame').on('click', function () {
     $(this.parentNode).remove();
     updateNumbers();
   });
